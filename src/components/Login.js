@@ -6,12 +6,14 @@ import { handleSetAuthedUser } from '../actions/authedUser';
 const Login = (props) => {
     const { users, dispatch } = props;
     const [user, setUser] = useState('');
+
     const handleChange = (e) => {
         e.preventDefault();
         const user = e.target.value;
         setUser(user);
         dispatch(handleSetAuthedUser(user));
     };
+
     return (
         <div className="border block p-6 rounded-lg shadow-lg bg-white max-w-sm m-auto mt-10">
             <h1 className="text-sky-800 text-3xl font-bold text-center mt-4 mb-4">Employee Polls</h1>

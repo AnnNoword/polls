@@ -29,7 +29,7 @@ const App = (props) => {
                         <Route path="/add" exact element={
                             props.authedUser ? <AddQuestion /> : <Login />
                         } />
-                        <Route path="question/:question_id" exact element={
+                        <Route path="questions/:question_id" exact element={
                             props.authedUser ? <AnswerQuestion /> : <Login />
                         } />
                         <Route path="*" exact element={

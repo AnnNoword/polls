@@ -14,12 +14,12 @@ const Question = ({ question }) => {
     const { id, author, timestamp } = question;
     const navigateToQuestion = (e) => {
         e.preventDefault();
-        navigate(`/question/${id}`);
+        navigate(`/questions/${id}`);
     };
 
     return (
         <li key={id} className="py-4">
-            <div className="border mx-3 px-4 py-4 block rounded-lg shadow-lg bg-white max-w-sm">
+            <div className="border mx-3 px-4 py-4 block rounded-lg bg-white max-w-sm">
                 <p className="text-sm font-medium text-gray-900 text-center">{author}</p>
                 <p className="text-sm text-gray-500 py-4">{formatDate(timestamp)}</p>
                 <Button text={'Show'} onClick={navigateToQuestion} />

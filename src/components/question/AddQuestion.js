@@ -53,8 +53,8 @@ const AddQuestion = (props) => {
             <div className="shadow-lg block p-6 rounded-lg border bg-white max-w-md m-auto">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group mb-6">
-                        <h1 className="text-sky-800 text-3xl font-bold text-center mt-4 mb-4">Would you rather</h1>
-                        <h2 className="text-gray-700 text-xl font-bold text-center mt-4 mb-4">Create your own poll</h2>
+                        <h1 className="text-sky-800 text-3xl font-bold text-center my-4">Would you rather</h1>
+                        <h2 className="text-gray-700 text-xl font-bold text-center my-4">Create your own poll</h2>
                         <Input text={'First Option'}
                                value={options.optionOne}
                                dataOption="optionOne"
