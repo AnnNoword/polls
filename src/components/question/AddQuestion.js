@@ -6,6 +6,7 @@ import Input from '../elements/Input';
 import { handleAddQuestion } from '../../actions/questions';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../Nav';
+import LoadingBar from 'react-redux-loading-bar';
 
 const AddQuestion = (props) => {
     const { authedUser, dispatch } = props;
@@ -32,23 +33,22 @@ const AddQuestion = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // SEND REQUEST TO SERVER
-        dispatch(handleAddQuestion({
-            optionOneText: options.optionOne,
-            optionTwoText: options.optionTwo,
-            author: authedUser
-        }));
-        // SET DATA ON STOREFRONT
         setOptions({
             ...options,
             optionOne: '',
             optionTwo: ''
         });
-        navigate('/');
+        dispatch(handleAddQuestion({
+            optionOneText: options.optionOne,
+            optionTwoText: options.optionTwo,
+            author: authedUser
+        })).then( () => {
+            navigate('/');
+        });
     };
     return (
         <div>
+            <LoadingBar scope="sectionBar" style={{ backgroundColor: 'rgb(7 89 133 / 1)', height: '4px' }} />
             <Nav />
             <div className="shadow-lg block p-6 rounded-lg border bg-white max-w-md m-auto">
                 <form onSubmit={handleSubmit}>
@@ -66,7 +66,7 @@ const AddQuestion = (props) => {
                                dataOption="optionTwo"
                                onChange={onChangeHandler} />
                     </div>
-                    <Button text={'Submit'} isDisabled={isDisabled()} />
+                    <Button text={'Submit question'} isDisabled={isDisabled()} />
                 </form>
             </div>
         </div>

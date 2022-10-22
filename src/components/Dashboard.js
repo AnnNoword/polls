@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import QuestionsList from './question/QuestionsList';
 import Nav from './Nav';
-import LoadingBar from 'react-redux-loading-bar';
 import Button from './elements/Button';
 
 const Dashboard = ({ userAnswers, pendingAnswers }) => {
@@ -14,12 +13,11 @@ const Dashboard = ({ userAnswers, pendingAnswers }) => {
     };
 
     const buttonText = toggle ? 'Show New questions' : 'Show answered questions';
-    const headingText = toggle ? 'New questions' : 'Done';
+    const headingText = toggle ? 'Done': 'New questions' ;
     const answers = toggle ? userAnswers : pendingAnswers;
 
     return (
         <div>
-            <LoadingBar scope="sectionBar" />
             <Nav />
             <div className="rounded-lg border p-4 max-w-xl mx-auto shadow-lg">
                 <h1 className="text-sky-800 text-sky-800 text-3xl font-bold text-center my-4">Dashboard</h1>

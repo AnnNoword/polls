@@ -16,7 +16,7 @@ const App = (props) => {
     }, []);
     return (
         <Fragment>
-            <LoadingBar />
+            <LoadingBar style={{ backgroundColor: 'rgb(7 89 133 / 1)', height: '4px' }} />
             <div className="App px-4 mx-auto">
                 {props.loading === true ? null : (
                     <Routes>
