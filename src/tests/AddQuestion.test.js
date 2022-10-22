@@ -22,7 +22,7 @@ describe('AddQuestion', () => {
         );
         const firstOptionInput = component.getByPlaceholderText('First Option'),
             secondOptionInput = component.getByPlaceholderText('Second Option');
-        const submitQuestionButton = component.getByText('Submit');
+        const submitQuestionButton = component.getByText('Submit question');
 
         expect(firstOptionInput).toBeInTheDocument();
         expect(secondOptionInput).toBeInTheDocument();
@@ -36,7 +36,7 @@ describe('AddQuestion', () => {
                     <AddQuestion />
                 </Provider>
             </MemoryRouter>);
-        const submitQuestionButton = component.getByText('Submit');
+        const submitQuestionButton = component.getByText('Submit question');
         expect(submitQuestionButton).toBeDisabled();
     });
 
@@ -60,7 +60,7 @@ describe('AddQuestion', () => {
                 value: 'Second option'
             }
         });
-        const submitQuestionButton = component.getByText('Submit');
+        const submitQuestionButton = component.getByText('Submit question');
         expect(submitQuestionButton).not.toBeDisabled();
     });
 });

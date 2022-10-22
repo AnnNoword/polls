@@ -10,7 +10,7 @@ Object {
       >
         <div
           class=""
-          style="width: 0%; transition: width 800ms linear 0s; will-change: width, opacity; height: 3px; background-color: red; position: absolute; opacity: 0;"
+          style="width: 0%; transition: width 800ms linear 0s; will-change: width, opacity; height: 4px; position: absolute; opacity: 0;"
         />
         <div
           style="display: table; clear: both;"
@@ -27,7 +27,7 @@ Object {
     >
       <div
         class=""
-        style="width: 0%; transition: width 800ms linear 0s; will-change: width, opacity; height: 3px; background-color: red; position: absolute; opacity: 0;"
+        style="width: 0%; transition: width 800ms linear 0s; will-change: width, opacity; height: 4px; position: absolute; opacity: 0;"
       />
       <div
         style="display: table; clear: both;"
